@@ -12,6 +12,7 @@ const ProductsPage = () => {
   >({
     queryKey: "products",
     queryFn: fetchProducts,
+    staleTime: 10000,
   });
 
   if (error)

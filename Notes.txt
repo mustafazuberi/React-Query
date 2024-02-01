@@ -1,0 +1,27 @@
+Stale Time:
+
+Stale time means agar hum ne 10 seconds stale time rakh dya tw jab tk woh time complete 
+nahi hoga woh server se request nh kare ga agar dbara data ki need hogi tw.
+Or Agar 10 seconds complete ho jaingey tw or data ki need hoi tw woh dbara request bhjey
+ga server ko phir data aiga dbara
+
+SUMMARY: Jab tk stale time complete nahi hojata data "fresh" state hoga tw use hojaiga
+or jab stale time khtm hogaya tw woh "stale" state me chala jaiga phir agar need hoi tw 
+woh dbara request krega
+
+Hum Har ek query ke liye seperate bh stale time set kar sakte hain or 
+commonly hum ReactQuery ke Provider ki configuration me default time bh ser kar
+sakte hain
+
+Window refocused ya network reconnect etc hoga tw automatically request server par chali jaigi
+
+Ya phir Hum refetch interval bh set kar sakte hain 
+
+ya phir hum refetch on windo refocus ya refetch on reconnect ko disable bh  kar sakte hain
+
+Agar same query kisi component ke child component me ya kahi use hogi tw request ek hee jaigi
+or data cache ho jaiga 2 bar nahi jaigi
+
+To change this functionality, you can use options like refetchOnMount, refetchOnWindowFocus,
+refetchOnReconnect and refetchInterval.
+

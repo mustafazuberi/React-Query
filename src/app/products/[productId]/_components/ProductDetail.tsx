@@ -10,7 +10,6 @@ const RATING_OUT_OF = 5;
 
 const ProductDetail = () => {
   const { productId } = useParams();
-
   const mutation = useMutation({
     mutationFn: (newProduct: Product) => {
       return axios.put(`${API_BASE_URL}/products/${productId}`, newProduct);
@@ -20,6 +19,7 @@ const ProductDetail = () => {
   const { data: product } = useQuery<Product, Error>({
     queryKey: ["product", productId],
     queryFn: () => fetchProduct(productId as string),
+    staleTime: 10000,
   });
 
   if (!product) return;
